@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Para um Grande Amigo</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(135deg,#6dd5ed,#2193b0);
+    color:white;
+    text-align:center;
+}
+
+.container{
+    background:rgba(255,255,255,.15);
+    backdrop-filter:blur(8px);
+    padding:40px;
+    border-radius:20px;
+    width:90%;
+    max-width:700px;
+    box-shadow:0 10px 30px rgba(0,0,0,.3);
+}
+
+h1{
+    margin-bottom:20px;
+}
+
+button{
+    margin-top:20px;
+    padding:15px 35px;
+    font-size:18px;
+    border:none;
+    border-radius:12px;
+    cursor:pointer;
+    background:#ffcc00;
+    color:#333;
+    transition:.3s;
+}
+
+button:hover{
+    transform:scale(1.08);
+}
+
+#mensagem{
+    display:none;
+    margin-top:30px;
+    animation:aparecer 1s;
+}
+
+@keyframes aparecer{
+    from{
+        opacity:0;
+        transform:translateY(20px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+
+    <h1>😊 Tenho uma surpresa para você!</h1>
+
+    <button onclick="mostrarMensagem()">
+        Clique aqui amigo ❤️
+    </button>
+
+    <div id="mensagem">
+        <h2>Obrigado pela sua amizade! 💙</h2>
+
+        <p style="margin-top:15px;font-size:20px;line-height:1.8;">
+            A amizade é um dos maiores presentes da vida.
+            Obrigado por estar presente nos momentos bons e
+            difíceis, pelas risadas, conversas e por tornar
+            os dias mais felizes. Que nossa amizade continue
+            por muitos anos! 🤝✨
+        </p>
+    </div>
+
+    <!-- Troque "musica.mp3" pelo nome do seu arquivo -->
+    <audio id="musica" loop>
+        <source src="musica.mp3" type="audio/mpeg">
+        Seu navegador não suporta áudio.
+    </audio>
+
+</div>
+
+<script>
+function mostrarMensagem(){
+
+    document.getElementById("mensagem").style.display = "block";
+
+    const musica = document.getElementById("musica");
+
+    musica.play().catch(() => {
+        alert("A música não foi encontrada. Coloque um arquivo chamado 'musica.mp3' na mesma pasta do index.html.");
+    });
+
+}
+</script>
+
+</body>
+</html>
